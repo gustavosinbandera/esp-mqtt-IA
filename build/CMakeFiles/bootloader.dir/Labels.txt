@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/CMakeFiles/bootloader
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/CMakeFiles/bootloader.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/CMakeFiles/bootloader-complete.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/gustavo/esp/proyectos-idf/mqtt_demo_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

@@ -1,0 +1,108 @@
+menu "MQTT Client Component"
+
+config MQTT_CLIENT_BROKER_URI
+    string "Broker URI (e.g. mqtt://host:1883, mqtts://host:8883)"
+    default "mqtt://broker.hivemq.com:1883"
+
+config MQTT_CLIENT_CLIENT_ID
+    string "Client ID"
+    default "esp32-client"
+
+config MQTT_CLIENT_USERNAME
+    string "Username (optional)"
+    default ""
+
+config MQTT_CLIENT_PASSWORD
+    string "Password (optional)"
+    default ""
+
+config MQTT_CLIENT_KEEPALIVE_SEC
+    int "Keepalive (seconds)"
+    range 5 3600
+    default 30
+
+config MQTT_CLIENT_CLEAN_SESSION
+    bool "Clean session"
+    default y
+
+config MQTT_CLIENT_LWT_ENABLE
+    bool "Enable Last Will and Testament (LWT)"
+    default n
+
+config MQTT_CLIENT_LWT_TOPIC
+    string "LWT topic"
+    depends on MQTT_CLIENT_LWT_ENABLE
+    default "device/status"
+
+config MQTT_CLIENT_LWT_MSG
+    string "LWT message"
+    depends on MQTT_CLIENT_LWT_ENABLE
+    default "offline"
+
+config MQTT_CLIENT_LWT_QOS
+    int "LWT QoS"
+    depends on MQTT_CLIENT_LWT_ENABLE
+    range 0 2
+    default 1
+
+config MQTT_CLIENT_LWT_RETAIN
+    bool "LWT retain"
+    depends on MQTT_CLIENT_LWT_ENABLE
+    default y
+
+config MQTT_CLIENT_BACKOFF_MIN_MS
+    int "Reconnect backoff min (ms)"
+    range 100 60000
+    default 500
+
+config MQTT_CLIENT_BACKOFF_MAX_MS
+    int "Reconnect backoff max (ms)"
+    range 500 600000
+    default 30000
+
+config MQTT_CLIENT_RX_QUEUE_LEN
+    int "RX queue length (messages)"
+    range 1 64
+    default 8
+
+config MQTT_CLIENT_CTRL_QUEUE_LEN
+    int "Control queue length (events)"
+    range 4 64
+    default 16
+
+config MQTT_CLIENT_OUTBOX_LEN
+    int "Fixed outbox length (publish messages kept while disconnected)"
+    range 0 64
+    default 8
+
+config MQTT_CLIENT_OUTBOX_OVERWRITE_OLDEST
+    bool "Outbox overflow policy: overwrite oldest (else reject new)"
+    default y
+    depends on MQTT_CLIENT_OUTBOX_LEN > 0
+
+config MQTT_CLIENT_MAX_TOPIC_LEN
+    int "Max topic length (bytes, including null terminator)"
+    range 16 512
+    default 128
+
+config MQTT_CLIENT_MAX_PAYLOAD_LEN
+    int "Max payload length (bytes)"
+    range 16 2048
+    default 512
+
+config MQTT_CLIENT_CTRL_TASK_STACK_SIZE
+    int "CTRL task stack size (bytes)"
+    range 2048 16384
+    default 4096
+
+config MQTT_CLIENT_RX_TASK_STACK_SIZE
+    int "RX task stack size (bytes)"
+    range 2048 16384
+    default 4096
+
+config MQTT_CLIENT_TASK_PRIORITY
+    int "Component task priority"
+    range 1 25
+    default 5
+
+endmenu

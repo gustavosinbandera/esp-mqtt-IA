@@ -1,0 +1,11 @@
+# Defaults for the demo (you can change via menuconfig)
+
+# MQTT component defaults (optional overrides)
+CONFIG_MQTT_CLIENT_BROKER_URI="mqtt://broker.hivemq.com:1883"
+CONFIG_MQTT_CLIENT_CLIENT_ID="esp32-demo-client"
+CONFIG_MQTT_CLIENT_KEEPALIVE_SEC=30
+CONFIG_MQTT_CLIENT_CLEAN_SESSION=y
+
+# Keep outbox enabled for demo
+CONFIG_MQTT_CLIENT_OUTBOX_LEN=8
+CONFIG_MQTT_CLIENT_OUTBOX_OVERWRITE_OLDEST=y
