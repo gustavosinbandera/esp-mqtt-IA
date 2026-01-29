@@ -1,0 +1,59 @@
+# =========================
+# ESP-IDF / CMake build
+# =========================
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.*.old
+# Si usas defaults locales (opcional)
+sdkconfig.defaults.local
+
+# =========================
+# ESP-IDF tools / cache
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# Python / tooling
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# =========================
+# OS / editor junk
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.bak
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# C/C++ artifacts
+# =========================
+*.o
+*.a
+*.so
+*.d
+*.obj
+*.elf
+*.map
+
+# =========================
+# Optional: component manager lock (decide if you want to track it)
+# If you want reproducible deps, REMOVE this line and commit idf_component.lock
+# =========================
+idf_component.lock
